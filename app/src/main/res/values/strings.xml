@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HeavyReportGenerator</string>
+
+    <string name="input_report_name">Input Report Name</string>
+    <string name="must_be_charging">Must Be Charging</string>
+    <string name="generate_report">Generate Report</string>
+</resources>
