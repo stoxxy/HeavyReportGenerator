@@ -5,10 +5,11 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.work.ListenableWorker
 import androidx.work.testing.TestListenableWorkerBuilder
 import androidx.work.workDataOf
-import com.example.heavyreportgenerator.data.GenerateReportWorker
-import com.example.heavyreportgenerator.data.WorkerConstants.Companion.FILE_NAME_KEY
-import com.example.heavyreportgenerator.data.WorkerConstants.Companion.FINAL_PATH_KEY
-import com.example.heavyreportgenerator.data.WorkerConstants.Companion.REPORTS_LOCATION
+import com.example.heavyreportgenerator.data.work.GenerateReportWorker
+import com.example.heavyreportgenerator.data.work.WorkerConstants.Companion.FILE_NAME_KEY
+import com.example.heavyreportgenerator.data.work.WorkerConstants.Companion.FINAL_PATH_KEY
+import com.example.heavyreportgenerator.data.work.WorkerConstants.Companion.REPORTS_LOCATION
+import io.mockk.mockk
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
@@ -25,7 +26,7 @@ class GenerateReportWorkerTest {
     fun setUp() {
         generateReportWorkerBuilder = TestListenableWorkerBuilder<GenerateReportWorker>(
             context = ApplicationProvider.getApplicationContext()
-        )
+        ).setForegroundUpdater(mockk(relaxed = true))
     }
 
     @Test

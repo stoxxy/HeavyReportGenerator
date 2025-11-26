@@ -1,4 +1,4 @@
-package com.example.heavyreportgenerator.data
+package com.example.heavyreportgenerator.data.work
 
 class WorkerConstants {
     companion object {

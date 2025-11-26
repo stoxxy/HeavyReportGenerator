@@ -1,4 +1,4 @@
-package com.example.heavyreportgenerator.data
+package com.example.heavyreportgenerator.data.work
 
 import android.content.Context
 import android.util.Log
